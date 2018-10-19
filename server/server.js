@@ -41,8 +41,8 @@ mongoose.connection.on('disconnecting', () =>
 mongoose.connection.on('disconnected', () =>
   console.log(`${MONGOOSE_MSG}: ${DB_NAME} - disconnected`));
 
-  mongoose.connection.on('close', () =>
-    console.log(`${MONGOOSE_MSG}: ${DB_NAME} - closed`));
+mongoose.connection.on('close', () =>
+  console.log(`${MONGOOSE_MSG}: ${DB_NAME} - closed`));
 
 mongoose.connection.on('reconnected', () =>
   console.log(`${MONGOOSE_MSG}: ${DB_NAME} - reconnected`));
@@ -56,4 +56,4 @@ app.listen(PORT, (err) => {
     console.log(err);
   }
   console.log(`Server listening on port ${PORT}`);
-})
+});
