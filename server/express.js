@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-// app.use('/', invoiceRoutes);
+app.use('/', invoiceRoutes);
 
 // Serve api documentation at root
 app.get('/', (req, res) => {
