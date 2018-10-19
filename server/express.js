@@ -11,12 +11,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-app.use('/', invoiceRoutes);
+// app.use('/', invoiceRoutes);
 
 // Serve api documentation at root
-// app.get('/', (req, res) => {
-//   res.status(200).send(...)
-// })
+app.get('/', (req, res) => {
+   res.status(200).send('<h1>API Docs</h1>');
+})
 
 
 module.exports = app;
