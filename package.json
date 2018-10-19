@@ -1,0 +1,24 @@
+{
+  "name": "invoice_tracker",
+  "version": "1.0.0",
+  "description": "A back end for tracking invoices",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austinwk/invoice_tracker.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "mongodb"
+  ],
+  "author": "Austin W Keeton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austinwk/invoice_tracker/issues"
+  },
+  "homepage": "https://github.com/austinwk/invoice_tracker#readme"
+}
