@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 
+const companyRoutes = require('./routes/companyRoutes');
 const invoiceRoutes = require('./routes/invoiceRoutes');
 
 
@@ -11,6 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
+app.use('/', companyRoutes);
 app.use('/', invoiceRoutes);
 
 // Serve api documentation at root
