@@ -1,12 +1,12 @@
 const express = require('express');
 
-const { addInvoice, getInvoices } = require('../controllers/invoiceController');
+const { addInvoice, getAllInvoices } = require('../controllers/invoiceController');
 
 
 const router = express.Router();
 
 router.route('/api/invoices')
-  .get(getInvoices)
+  .get(getAllInvoices)
   .post(addInvoice);
 
 
