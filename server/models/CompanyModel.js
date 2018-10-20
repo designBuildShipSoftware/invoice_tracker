@@ -21,7 +21,7 @@ const CompanySchema = new mongoose.Schema({
     trim: true,
     required: 'A city is required.'
   },
-  stateAbbreviation: {
+  state: {
     type: String,
     trim: true,
     required: 'A two character state abbreviation is required.'
