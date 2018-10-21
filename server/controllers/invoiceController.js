@@ -1,5 +1,4 @@
 const Invoice = require('../models/InvoiceModel');
-const getErrorMessage = require('../helpers/dbErrorHandler');
 
 
 // Create a new invoice
@@ -7,7 +6,7 @@ const addInvoice = (req, res) => {
   const invoice = new Invoice(req.body);
   invoice.save((err, result) => {
     if (err) {
-      return res.status(400).json(getErrorMessage(err));
+      return res.status(400).json(err);
     }
     res.status(200).json(result);
   });
@@ -17,7 +16,7 @@ const addInvoice = (req, res) => {
 const getAllInvoices = (req, res) => {
   Invoice.find({}, (err, docs) => {
     if (err) {
-      return res.status(400).json(getErrorMessage(err));
+      return res.status(400).json(err);
     }
     res.status(200).json(docs);
   })
