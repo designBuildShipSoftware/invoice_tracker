@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const { getStateValidator, getZipValidator } = require('../helpers/schemaValidators');
+
 
 const CompanySchema = new mongoose.Schema({
   name: {
@@ -23,12 +25,12 @@ const CompanySchema = new mongoose.Schema({
   },
   state: {
     type: String,
-    trim: true,
+    validate: getStateValidator(),
     required: 'A two character state abbreviation is required.'
   },
   zip: {
-    type: Number,
-    trim: true,
+    type: String,
+    validate: getZipValidator(),
     required: 'A zip code is required.'
   },
   phones: {
