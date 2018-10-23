@@ -31,7 +31,7 @@ const InvoiceSchema = new mongoose.Schema({
     type: String
   },
   invoiceAmount: {
-    type: String
+    type: Number
   },
   invoiceDescription: {
     type: String
