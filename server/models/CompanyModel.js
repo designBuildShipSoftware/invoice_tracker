@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const { getStateValidator, getZipValidator } = require('../helpers/schemaValidators');
+const {
+  getPhoneValidator,
+  getStateValidator,
+  getZipValidator
+} = require('../helpers/schemaValidators');
 
 
 const CompanySchema = new mongoose.Schema({
@@ -34,7 +38,7 @@ const CompanySchema = new mongoose.Schema({
     required: 'A zip code is required.'
   },
   phones: {
-    type: Array
+    type: [{type: String, validate: getPhoneValidator()}]
   },
   faxes: {
     type: Array
