@@ -44,10 +44,21 @@ const getStateValidator = () => {
       return tools.isStateAbbr(value);
     },
     message: (...props) => {
-      return 'State must be valid, two-characters, and uppercase (ex: OK)'
+      return 'State must be valid, two-characters, and uppercase (ex: OK).'
     }
   };
 };
 
+const getPhoneValidator = () => {
+  return {
+    validator: (value, ...props) => {
+      return v.isMobilePhone(value);
+    },
+    messaage: (...props) => {
+      return 'Phone must be of valid format (ex: 123-4567, 123-456-7890.';
+    }
+  }
+}
 
-module.exports = { getStateValidator, getZipValidator };
+
+module.exports = { getPhoneValidator, getStateValidator, getZipValidator };
