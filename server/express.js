@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const morgan = require('morgan');
 
 const companyRoutes = require('./routes/companyRoutes');
 const invoiceRoutes = require('./routes/invoiceRoutes');
@@ -8,6 +9,7 @@ const invoiceRoutes = require('./routes/invoiceRoutes');
 const app = express();
 
 // Middleware
+app.use(morgan('short'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
