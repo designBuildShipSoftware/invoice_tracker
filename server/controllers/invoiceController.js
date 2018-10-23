@@ -14,7 +14,6 @@ const addInvoice = (req, res) => {
 
 // Get invoices
 const getInvoices = (req, res) => {
-  console.log(req.query);
   Invoice.find(req.query, (err, docs) => {
     if (err) {
       return res.status(400).json(err);
