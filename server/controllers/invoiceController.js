@@ -12,9 +12,10 @@ const addInvoice = (req, res) => {
   });
 };
 
-// Get all invoices
-const getAllInvoices = (req, res) => {
-  Invoice.find({}, (err, docs) => {
+// Get invoices
+const getInvoices = (req, res) => {
+  console.log(req.query);
+  Invoice.find(req.query, (err, docs) => {
     if (err) {
       return res.status(400).json(err);
     }
@@ -50,13 +51,18 @@ const updateIvoiceById = (req, res) => {
     }
     res.status(200).json(docs);
   });
-}
+};
+
+// Query invoices
+const queryInvoices = (req, res) => {
+  console.log(req.queries);
+};
 
 
 module.exports = {
   addInvoice,
   deleteInvoiceById,
-  getAllInvoices,
+  getInvoices,
   getInvoiceById,
   updateIvoiceById
 };
