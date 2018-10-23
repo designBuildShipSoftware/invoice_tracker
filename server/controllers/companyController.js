@@ -22,5 +22,29 @@ const getAllCompanies = (req, res) => {
   });
 };
 
+const getCompanyById = (req, res) => {
+    Company.findById(req.params.id, (err, docs) => {
+      if (err) {
+      res.status(400).json(err);
+    }
+    res.status(200).json(docs);
+  });
+};
 
-module.exports = { addCompany, getAllCompanies };
+const updateCompanyById = (req, res) => {
+  Company.findByIdAndUpdate(req.params.id, req.body, (err, docs) => {
+    console.log(req);
+    if (err) {
+      res.status(400).json(err);
+    }
+    res.status(200).json(docs);
+  });
+};
+
+
+module.exports = {
+  addCompany,
+  getCompanyById,
+  getAllCompanies,
+  updateCompanyById
+};
